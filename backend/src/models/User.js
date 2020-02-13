@@ -18,6 +18,15 @@ const UserSchema = new mongoose.Schema({
         type: [String],
         required: false,
     },
+    favorite: {
+        type: Boolean,
+        default: false,
+    },
+    profile_url: {
+        type: String,
+        required: true,
+        default: null,
+    },
     createdAt: {
         type: Date,
         default: Date.now,
