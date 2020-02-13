@@ -1,0 +1,31 @@
+.backdrop {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.3);
+    padding: 50px;
+    color: #000;
+    z-index: 3;
+}
+
+.backdrop h1 {
+    background-color: #fff;
+    max-height: 180px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.backdrop button {
+    border: 0;
+    color: #ff0707;
+    border-radius: 2px;
+    max-height: 20px;
+}
+
+.backdrop button strong {
+    padding: 5px;
+}
