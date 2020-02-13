@@ -23,6 +23,7 @@ function FormUser({ onSubmit }) {
             description: user.data.bio,
             avatar_url: user.data.avatar_url,
             techs,
+            profile_url: user.data.html_url,
         });
     }
 
