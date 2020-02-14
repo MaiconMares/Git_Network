@@ -22,5 +22,9 @@ module.exports = {
     async destroy(request, response) {
         const user = await User.findByIdAndRemove(request.params.id);
         return response.send('The removal was sucessfull!');
+    },
+    async showUser(request, response) {
+        const user = await User.findById(request.params.id);
+        return response.json(user);
     }
 };
