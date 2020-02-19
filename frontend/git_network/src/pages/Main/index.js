@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
-import "./style.css";
 import FormUser from '../FormUser';
+import { Link } from 'react-router-dom';
+import "./style.css";
 
 function Main() {
     const [users, setUsers] = useState([]);
@@ -39,6 +40,7 @@ function Main() {
     async function handleDelete(id) {
         const [userTemp] = await users.filter(user => 
             ((user._id === id) ? user : null));
+
         if (userTemp) {
             const response = await api.delete(`/delete_user/${id}`);
             console.log(response.data);
@@ -69,6 +71,11 @@ function Main() {
                                     </strong>
                                     <strong onClick={() => handleDelete(user._id)}>
                                         <i className="glyphicon">&#xe020;</i>
+                                    </strong>
+                                    <strong>
+                                        <Link to={`/edit_user/${user._id}`}>
+                                            <i className="fa">&#xf040;</i>
+                                        </Link>
                                     </strong>
                                 </div>
                             </div>

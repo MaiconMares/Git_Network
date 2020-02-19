@@ -25,6 +25,10 @@
     border-bottom: 2px solid #7159a7;
 }
 
+.form-user input:focus {
+    outline: none;
+}
+
 .form-user .form-submit {
     display: flex;
     justify-content: flex-end;

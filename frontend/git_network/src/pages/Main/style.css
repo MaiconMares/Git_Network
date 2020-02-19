@@ -58,6 +58,11 @@
     color: #c92626;
 }
 
+.main-users li .user-actions strong .fa {
+    font-size: 16px;
+    color: rgb(141, 59, 0);
+}
+
 .main-users li .user-content {
     width: 100%;
     display: flex;
