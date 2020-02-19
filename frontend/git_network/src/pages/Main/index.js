@@ -6,6 +6,7 @@ import "./style.css";
 
 function Main() {
     const [users, setUsers] = useState([]);
+    const [qttFavorites, setQttFavorites] = useState(0);
 
     useEffect(() => {
         async function mostrarUsers() {
@@ -15,6 +16,12 @@ function Main() {
         }
         mostrarUsers();
     }, [users]);
+
+    useEffect(() => {
+        let qttTemp = users.filter(user => (user.favorite === true) ? user : null);
+        setQttFavorites(qttTemp.length);
+        document.title = `Você tem ${qttFavorites} favorito(s)`;
+    }, [handleFavorite]);
 
     async function saveUser(data) {
         const response = await api.post('/', data);
@@ -34,7 +41,6 @@ function Main() {
     
             setUsers([...users, response.data]);
         }
-
     }
 
     async function handleDelete(id) {
